@@ -12,7 +12,7 @@ namespace Client
         static void Main(string[] args)
         {
             Book b = new Book(1, "Dan Brown", "Inferno", 5560, 2013);
-            Book b1 = new Book(1, "Keys", "Flowers for Algernon", 750, 2011); 
+            Book b1 = new Book(2, "Keys", "Flowers for Algernon", 750, 2011); 
             var client = new Test.BookServiceClient();
             client.AddBook(b);
             client.AddBook(b1);
@@ -21,7 +21,7 @@ namespace Client
             {
                 Console.WriteLine("ID is {0}, Author is {1}, Title is {2}, Price is {3}, Release year is {4}", currentBooks[i].ID, currentBooks[i].author, currentBooks[i].title, currentBooks[i].price, currentBooks[i].year);
             }
-            client.UpdatePrice(1, 800);
+            client.UpdatePrice(1, 800);          
             currentBooks = client.GetBooks().ToList();
             for (int i = 0; i < currentBooks.Count; i++)
             {

@@ -8,7 +8,8 @@ using Books;
 
 namespace BookService
 {
-  //  WCF self-hosted service in a console application which allows to see all the books in the library, add new book, update book price.
+    //  WCF self-hosted service in a console application which allows to see all the books in the library, add new book, update book price.
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class BookService : IBookService
     {
         List<Book> books = new List<Book>();
