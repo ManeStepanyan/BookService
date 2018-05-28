@@ -22,16 +22,16 @@ namespace Client.Test {
         System.Threading.Tasks.Task<Books.Book[]> GetBooksAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/AddBook", ReplyAction="http://tempuri.org/IBookService/AddBookResponse")]
-        void AddBook(Books.Book b);
+        BookService.Result AddBook(Books.Book b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/AddBook", ReplyAction="http://tempuri.org/IBookService/AddBookResponse")]
-        System.Threading.Tasks.Task AddBookAsync(Books.Book b);
+        System.Threading.Tasks.Task<BookService.Result> AddBookAsync(Books.Book b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/UpdatePrice", ReplyAction="http://tempuri.org/IBookService/UpdatePriceResponse")]
-        void UpdatePrice(int ID, double price);
+        BookService.Result UpdatePrice(int ID, double price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/UpdatePrice", ReplyAction="http://tempuri.org/IBookService/UpdatePriceResponse")]
-        System.Threading.Tasks.Task UpdatePriceAsync(int ID, double price);
+        System.Threading.Tasks.Task<BookService.Result> UpdatePriceAsync(int ID, double price);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,19 +69,19 @@ namespace Client.Test {
             return base.Channel.GetBooksAsync();
         }
         
-        public void AddBook(Books.Book b) {
-            base.Channel.AddBook(b);
+        public BookService.Result AddBook(Books.Book b) {
+            return base.Channel.AddBook(b);
         }
         
-        public System.Threading.Tasks.Task AddBookAsync(Books.Book b) {
+        public System.Threading.Tasks.Task<BookService.Result> AddBookAsync(Books.Book b) {
             return base.Channel.AddBookAsync(b);
         }
         
-        public void UpdatePrice(int ID, double price) {
-            base.Channel.UpdatePrice(ID, price);
+        public BookService.Result UpdatePrice(int ID, double price) {
+            return base.Channel.UpdatePrice(ID, price);
         }
         
-        public System.Threading.Tasks.Task UpdatePriceAsync(int ID, double price) {
+        public System.Threading.Tasks.Task<BookService.Result> UpdatePriceAsync(int ID, double price) {
             return base.Channel.UpdatePriceAsync(ID, price);
         }
     }

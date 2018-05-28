@@ -14,9 +14,29 @@ namespace BookService
         [OperationContract]
         List<Book> GetBooks(); // Get all the books from the collection
         [OperationContract]
-        void AddBook(Book b); // Add any book
+       Result AddBook(Book b); // Add any book
         [OperationContract]
-        void UpdatePrice(int ID, double price); // update price of the book
+       Result UpdatePrice(int ID, double price); // update price of the book
 
+    }
+    [DataContract]
+    public class Result
+    {
+        string message;
+        string status;
+
+        [DataMember]
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
+
+        [DataMember]
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
     }
 }

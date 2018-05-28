@@ -10,21 +10,26 @@ namespace BookService
 {
     //  WCF self-hosted service in a console application which allows to see all the books in the library, add new book, update book price.
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    [DataContract] //
     public class BookService : IBookService
     {
-        List<Book> books = new List<Book>();
-        public void AddBook(Book b)
+        static List<Book> books = new List<Book>();
+        public Result AddBook(Book b)
         {
+            Result res = new Result();
             for (int i = 0; i < books.Count; i++)
             {
                 if (b.ID == books[i].ID)
                 {
-                    Console.WriteLine("ID's cannot be repeated");
-                    return;
+                    res.Status = "Fail";
+                    res.Message = "ID's cannot be repeated";
+                    return res;
                 }
             }
             books.Add(b);
-            Console.WriteLine("Added");
+            res.Status = "Success";
+            res.Message = "Added";
+            return res;
         }
 
         public List<Book> GetBooks()
@@ -32,21 +37,20 @@ namespace BookService
             return books;
         }
 
-        public void UpdatePrice(int ID, double price)
+        public Result UpdatePrice(int ID, double newPrice)
         {
-            if (books.Count(c => c.ID == ID) != 1)
+            Result res = new Result();
+            var currentBook = books.FirstOrDefault(c => c.ID == ID);
+            if (currentBook is null)
             {
-                Console.WriteLine("That book doesn't exist in our collection");
-                return;
+                res.Status = "Fail";
+                res.Message = "That book doesn't exist in our collection";
+                return res;
             }
-            for (int i = 0; i < books.Count; i++)
-            {
-                if (ID == books[i].ID)
-                {
-                    books[i].price = price;
-                }
-            }
-
+            res.Status = "Success";
+            res.Message = "Updated";
+            currentBook.price = newPrice;
+            return res;
         }
     }
 }

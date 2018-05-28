@@ -22,11 +22,12 @@
     <MetadataSource Address="http://192.168.2.252:5901/IBookService" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="IBookService.xsd" MetadataType="Schema" ID="c6952b7f-8ebd-473e-86e2-61d8d0de8b7d" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?xsd=xsd2" />
-    <MetadataFile FileName="IBookService1.xsd" MetadataType="Schema" ID="c907f52b-df77-493e-a0c1-8d2af6a58741" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?xsd=xsd1" />
-    <MetadataFile FileName="BookService.wsdl" MetadataType="Wsdl" ID="7fb54c74-b249-46f5-9b3d-2df5f020be11" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?wsdl" />
-    <MetadataFile FileName="IBookService.disco" MetadataType="Disco" ID="c537cc5f-034c-4a5d-8df5-920fde4b0a00" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?disco" />
     <MetadataFile FileName="IBookService2.xsd" MetadataType="Schema" ID="0fcddcd5-a129-49ed-ad62-b4478be3532b" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?xsd=xsd0" />
+    <MetadataFile FileName="IBookService.disco" MetadataType="Disco" ID="c537cc5f-034c-4a5d-8df5-920fde4b0a00" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?disco" />
+    <MetadataFile FileName="IBookService.xsd" MetadataType="Schema" ID="c6952b7f-8ebd-473e-86e2-61d8d0de8b7d" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?xsd=xsd2" />
+    <MetadataFile FileName="BookService.wsdl" MetadataType="Wsdl" ID="7fb54c74-b249-46f5-9b3d-2df5f020be11" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?wsdl" />
+    <MetadataFile FileName="IBookService3.xsd" MetadataType="Schema" ID="ba045d4a-2522-4d85-91e7-9493a7198619" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?xsd=xsd3" />
+    <MetadataFile FileName="IBookService1.xsd" MetadataType="Schema" ID="c907f52b-df77-493e-a0c1-8d2af6a58741" SourceId="1" SourceUrl="http://192.168.2.252:5901/IBookService?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
